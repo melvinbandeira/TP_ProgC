@@ -1,43 +1,52 @@
 #include <stdio.h>
 
 int main(void) {
-    char                    var_char = 'e';
-    unsigned char           var_char_unsigned = 200;      // évite 'é' (non portable)
+    /* Caractères */
+    signed char sc = -42;
+    unsigned char uc = 200U;
 
-    short                   var_short = 3;
-    unsigned short          var_short_unsigned = 3;
+    /* Entiers courts */
+    short s = -12345;
+    unsigned short us = 54321U;
 
-    int                     var_int = 1620;
-    unsigned int            var_int_unsigned = 1620U;
+    /* Entiers “classiques” */
+    int i = -123456;
+    unsigned int ui = 345678U;
 
-    long int                var_long_int = 88888888888L;           // suffixe L
-    unsigned long int       var_long_int_unsigned = 8888888888888888UL;
+    /* Longs (attention: taille dépend de la plateforme) */
+    long li = -2000000000L;
+    unsigned long uli = 3000000000UL;
 
-    long long int           var_long_long_int = 999999999999999LL; // suffixe LL
-    unsigned long long int  var_long_long_int_unsigned = 9999999999999ULL;
+    /* Très longs (toujours au moins 64 bits en pratique) */
+    long long lli = -1234567890123LL;
+    unsigned long long ulli = 123456789012345ULL;
 
-    float                   var_float = 0.1f;           // suffixe f
-    double                  var_double = 0.1254;
-    long double             var_long_double = 0.1365485446958456L; // suffixe L
+    /* Virgule flottante */
+    float f = 3.14f;
+    double d = 2.718281828;
+    long double ld = 1.61803398875L;
 
-    printf("var char size                       : %zu\n", sizeof var_char);
-    printf("var char unsigned size              : %zu\n", sizeof var_char_unsigned);
+    /* Affichages */
+    printf("signed char           = %hhd\n", sc);
+    printf("unsigned char         = %hhu\n", uc);
 
-    printf("var short size                      : %zu\n", sizeof var_short);
-    printf("var short unsigned size             : %zu\n", sizeof var_short_unsigned);
+    printf("short                 = %hd\n", s);
+    printf("unsigned short        = %hu\n", us);
 
-    printf("var int size                        : %zu\n", sizeof var_int);
-    printf("var int unsigned size               : %zu\n", sizeof var_int_unsigned);
+    printf("int                   = %d\n", i);
+    printf("unsigned int          = %u\n", ui);
 
-    printf("var long int size                   : %zu\n", sizeof var_long_int);
-    printf("var long int unsigned size          : %zu\n", sizeof var_long_int_unsigned);
+    printf("long int              = %ld\n", li);
+    printf("unsigned long int     = %lu\n", uli);
 
-    printf("var long long int size              : %zu\n", sizeof var_long_long_int);
-    printf("var long long int unsigned size     : %zu\n", sizeof var_long_long_int_unsigned);
+    printf("long long int         = %lld\n", lli);
+    printf("unsigned long long    = %llu\n", ulli);
 
-    printf("var float size                      : %zu\n", sizeof var_float);
-    printf("var double size                     : %zu\n", sizeof var_double);
-    printf("var long double size                : %zu\n", sizeof var_long_double);
+    printf("float                 = %.6f\n", f);
+    printf("double                = %.9f\n", d);
+    printf("long double           = %.12Lf\n", ld);
 
     return 0;
 }
+
+
